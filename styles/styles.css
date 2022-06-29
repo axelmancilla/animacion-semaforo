@@ -1,0 +1,197 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*Variables*/
+
+:root{
+	--color-naranja: #be8d1e;
+	--naranja-oscuro: #89671e;
+	--azul-oscuro: #14223a;
+	/*Estado: Apagado*/
+	--rojo-apagado: #3f1617;
+	--amarillo-apagado: #393f16;
+	--verde-apagado: #163f23;
+	/*Estado: Encendido*/
+	--rojo-encendido: #e4383b;
+	--amarillo-encendido: #e4e438;
+	--verde-encendido: #38e46a;
+}
+
+
+
+/*BODY*/
+
+body{
+	height: 100vh;
+	background-color: var(--azul-oscuro);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+
+
+/*CONTENEDOR*/
+
+.contenedor{
+	background-color: #0f1721;
+	width: 80px;
+	height: 170px;
+	margin-top: 10px;
+	border: 5px solid var(--color-naranja);
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/*LUCES*/
+
+.contenedor__luz{
+	background-color: tomato;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	margin-top: 5px;
+	animation-name: luces;
+
+
+}
+
+
+
+/*Luz roja*/
+
+.contenedor__luz--roja{
+	background-color: var(--rojo-apagado);
+	animation-name: rojo;
+	animation-duration: 10s;
+	animation-delay: 1s;
+	animation-timing-function: linear;
+}
+
+/*Animation*/
+@keyframes rojo{
+	5%{
+		background-color: var(--rojo-encendido);
+		box-shadow: 0 0 40px red;
+
+	}
+
+	75%{
+		background-color: var(--rojo-encendido);
+		box-shadow: 0 0 20px red;
+	}
+
+	80%{
+		background-color: var(--rojo-apagado);
+	}
+	to{
+		background-color: var(--rojo-apagado);
+	}
+}
+
+
+
+/*Luz amarilla*/
+
+.contenedor__luz--amarilla{
+	background-color: var(--amarillo-apagado);
+	animation-name: amarillo;
+	animation-duration: 5s;
+	animation-delay: 9s;
+	animation-timing-function: linear;
+}
+
+/*Animation*/
+
+@keyframes amarillo{
+	5%{
+		background-color: var(--amarillo-encendido);
+		box-shadow: 0 0 20px gold;
+	}
+
+	75%{
+		background-color: var(--amarillo-encendido);
+		box-shadow: 0 0 20px gold;
+	}
+
+	80%{
+		background-color: var(--amarillo-apagado);
+	}
+
+	to{
+		background-color: var(--amarillo-apagado);
+	}
+}
+
+
+/*Luz verde*/
+
+.contenedor__luz--verde{
+	background-color: var(--verde-apagado);
+	animation-name: verde;
+	animation-duration: 10s;
+	animation-delay: 13s;
+	animation-timing-function: linear;
+}
+
+/*Animation*/
+
+@keyframes verde{
+	5%{
+		background-color: var(--verde-encendido);
+		box-shadow: 0 0 20px green;
+	}
+
+	75%{
+		background-color: var(--verde-encendido);
+		box-shadow: 0 0 20px green;
+	}
+
+	80%{
+		background-color: var(--verde-apagado);
+	}
+	to{
+		background-color: var(--verde-apagado);
+	}
+}
+
+
+
+
+
+
+
+/*POSTE*/
+
+.poste{
+	height: 220px;
+	width: 18px;
+	background-color: var(--color-naranja);
+	border-radius: 0 0 3px 3px;
+	position: relative;
+	z-index: 2;
+}
+
+.poste__sombra{
+	height: 8%;
+	background-color: var(--naranja-oscuro);
+}
+
+/*PISO*/
+
+.piso{
+	height: 5vh;
+	width: 100%;
+	background-color: gray;
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+}
